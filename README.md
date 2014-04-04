@@ -1,0 +1,4 @@
+betterlaughs
+============
+
+Better Laughs. Seriously.
