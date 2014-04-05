@@ -4,4 +4,8 @@ class LaughsController < ApplicationController
   def index
 
   end
+
+  def create
+    render text: params[:laugh].inspect
+  end
 end

@@ -1,0 +1,13 @@
+<h1>Add a new Laugh</h1>
+
+<%= form_for :laugh, url: laughs_path do |f| %>
+    <div class="form-group">
+        <%= f.label :title %>
+        <%= f.text_field :title, placeholder: "Funny cact fails to climb curtain", class: "form-control" %>
+    </div>
+    <div class="form-group">
+        <%= f.label :file %>
+        <%= f.file_field :file %>
+    </div>
+    <%= f.submit class: "btn btn-primary" %>
+<% end %>
