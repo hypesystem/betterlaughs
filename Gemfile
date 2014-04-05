@@ -20,7 +20,7 @@ end
 gem 'less-rails', '2.3.3'
 
 # Bootstrap LESS
-gem "twitter-bootstrap-rails"
+gem "bootstrap-on-rails"
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'

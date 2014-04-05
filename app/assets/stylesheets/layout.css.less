@@ -1,6 +1,7 @@
 html {
     height: 100%;
 }
+
 body {
     background: #e0e0e0;
     height: 100%;
@@ -8,24 +9,30 @@ body {
     & > header {
         box-shadow: 0 1px 2px #999;
         text-align: center;
-        padding: 7px 0 0 0;
         background: #f4f4f4;
         position: relative;
         z-index: 1000;
 
         .navbar {
-            max-width: 960px;
+            max-width: 800px;
             width: 100%;
             display: inline-block;
             text-align: left;
-            margin-bottom: 0;
+            margin-bottom: -5px;
+            background: none;
+            border: none;
+
+            .navbar-brand {
+                padding: 10px 10px 0 0;
+                vertical-align: middle;
+            }
         }
     }
 
     .container {
         max-width: 800px;
         width: 100%;
-        background: #f4f4f4;
+        background: #fafafa;
         padding: 50px 15px 30px;
         border-left: 1px solid #999;
         border-right: 1px solid #999;
