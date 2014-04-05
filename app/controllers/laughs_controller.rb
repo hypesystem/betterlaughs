@@ -15,4 +15,15 @@ class LaughsController < ApplicationController
     @laugh.save
     redirect_to @laugh
   end
+
+  def show
+    @laugh = Laugh.find(params[:id])
+  end
+
+  def raw
+    @laugh = Laugh.find(params[:id])
+
+    send_data @laugh.file, :type => @laugh.filetype, :disposition => 'inline'
+  end
+
 end
