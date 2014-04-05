@@ -54,7 +54,7 @@ test:
 production:
   adapter: postgresql
   encoding: unicode
-  database: betterlaughs_production
+  database: betterlaughs
   pool: 5
   username: betterlaughs
-  password:
+  password: ppyByw90Hb8RlGjGeXo1PFOIKJ
