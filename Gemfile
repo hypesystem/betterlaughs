@@ -13,6 +13,10 @@ gem 'therubyracer', platforms: :ruby
 # gem 'sass-rails', '~> 4.0.0'
 
 # Less
+group :assets do
+    gem 'less'
+end
+
 gem 'less-rails', '2.3.3'
 
 # Bootstrap LESS
