@@ -4,7 +4,7 @@ class LaughsController < ApplicationController
   protect_from_forgery with: :exception
 
   def index
-    @laughs = Laugh.all
+    @laughs = Laugh.all.sort{|x,y| y.created_at <=> x.created_at}.take(10)
   end
 
   def create
@@ -13,7 +13,7 @@ class LaughsController < ApplicationController
     @laugh = Laugh.new(title: attr[:title], file: attr[:file].read, filetype: filetype)
 
     @laugh.save
-    redirect_to @laugh
+    redirect_to laughs_path
   end
 
   def show
