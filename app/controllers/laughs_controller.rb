@@ -4,7 +4,13 @@ class LaughsController < ApplicationController
   protect_from_forgery with: :exception
 
   def index
-    @laughs = Laugh.all.sort{|x,y| y.created_at <=> x.created_at}.take(10)
+    num_items = 10
+    offset = params[:offset].to_i ||= 0
+    all_laughs = Laugh.all.sort{|x,y| y.created_at <=> x.created_at}
+
+    @laughs = all_laughs[offset,num_items]
+    @next_offset = offset + num_items
+    @more_items = all_laughs.size > @next_offset
   end
 
   def create
