@@ -9,6 +9,12 @@ class LaughsController < ApplicationController
     all_laughs = Laugh.all.sort{|x,y| y.created_at <=> x.created_at}
 
     @laughs = all_laughs[offset,num_items]
+
+    @laughs.each do |l|
+        l.loads = l.loads.to_i + 1
+        l.save
+    end
+
     @next_offset = offset + num_items
     @more_items = all_laughs.size > @next_offset
   end
@@ -25,6 +31,7 @@ class LaughsController < ApplicationController
   def show
     @laugh = Laugh.find(params[:id])
     @laugh.loads = @laugh.loads.to_i + 1;
+    @laugh.save
   end
 
   def raw
