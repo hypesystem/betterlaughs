@@ -1,1 +1,16 @@
-<%= render "laugh_item", laugh: @laugh %>
+<div class="laugh laugh-detail">
+    <h1 class="laugh-title"><%= @laugh.title %></h1>
+    <div class="laugh-image">
+        <img src="<%= raw_img_url @laugh %>">
+    </div>
+    <div class="laugh-info">
+        <div class="laugh-download">
+            <a href="<%= raw_img_url @laugh %>" class="btn btn-default" target="_blank">
+                <span class="glyphicon glyphicon-cloud-download"></span>
+                See raw image
+            </a>
+        </div>
+        <div class="laugh-views"><%= @laugh.views.to_i %> views</div>
+        <div class="laugh-loads"><%= @laugh.loads.to_i %> loads</div>
+    </div>    
+</div>
