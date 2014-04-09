@@ -18,6 +18,7 @@ class LaughsController < ApplicationController
 
   def show
     @laugh = Laugh.find(params[:id])
+    @laugh.loads = @laugh.loads.to_i + 1;
   end
 
   def raw
