@@ -1,3 +1,7 @@
 <% @laughs.each do |l| %>
     <%= render "laugh_item", laugh: l %>
 <% end %>
+
+<% if @more_items %>
+    <a href="?offset=<%= @next_offset %>" class="btn btn-default btn-lg btn-block">More Laughs!</a>
+<% end %>
