@@ -14,3 +14,9 @@
         <div class="laugh-loads"><%= @laugh.loads.to_i %> loads</div>
     </div>    
 </div>
+<script src="<%= asset_url "view-count.js" %>"></script>
+<script>
+    $(document).ready(function() {
+        incrementViewCount(<%= @laugh.id %>);
+    });
+</script>

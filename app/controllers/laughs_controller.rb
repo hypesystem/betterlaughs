@@ -40,4 +40,12 @@ class LaughsController < ApplicationController
     send_data @laugh.file, :type => @laugh.filetype, :disposition => 'inline'
   end
 
+  def increment_views
+    @laugh = Laugh.find(params[:id])
+    @laugh.views = @laugh.views.to_i + 1;
+    @laugh.save!
+
+    render json: { views: @laugh.views }
+  end
+
 end
