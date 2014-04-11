@@ -1,4 +1,5 @@
 include LaughsHelper
+include ApplicationHelper
 
 class LaughsController < ApplicationController
   protect_from_forgery with: :exception
@@ -17,6 +18,14 @@ class LaughsController < ApplicationController
     attr = params[:laugh]
     filetype = get_content_type_from_headers(attr[:file].headers)
     @laugh = Laugh.new(title: attr[:title], file: attr[:file].read, filetype: filetype)
+
+    unless attr[:source].nil?
+        if valid_url? attr[:source]
+            @laugh.source = attr[:source]
+        else
+            raise URI::InvalidURIError
+        end
+    end
 
     @laugh.save
     redirect_to laughs_path

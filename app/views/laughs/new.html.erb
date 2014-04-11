@@ -9,5 +9,9 @@
         <%= f.label :file %>
         <%= f.file_field :file %>
     </div>
+    <div class="form-group">
+        <%= f.label "Source (optional)" %>
+        <%= f.text_field :source, placeholder: "http://9gag.com/gag/399616", class: "form-control", type: "url" %>
+    </div>
     <%= f.submit class: "btn btn-primary" %>
 <% end %>
