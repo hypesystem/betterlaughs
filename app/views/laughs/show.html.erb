@@ -12,7 +12,7 @@
         </div>
         <div class="laugh-views"><%= @laugh.views.to_i %> views</div>
         <div class="laugh-loads"><%= @laugh.loads.to_i %> loads</div>
-        <% unless @laugh.source.nil? %>
+        <% unless @laugh.source.to_s.empty? %>
             <div class="laugh-source">Source: <a href="<%= @laugh.source %>" target="_blank"><%= url_domain @laugh.source %></a></div>
         <% end %>
         <div class="laugh-created"><%= @laugh.created_at %></div>
