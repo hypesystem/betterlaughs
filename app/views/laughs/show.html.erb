@@ -12,6 +12,10 @@
         </div>
         <div class="laugh-views"><%= @laugh.views.to_i %> views</div>
         <div class="laugh-loads"><%= @laugh.loads.to_i %> loads</div>
+        <% unless @laugh.source.nil? %>
+            <div class="laugh-source">Source: <%= url_domain @laugh.source %></div>
+        <% end %>
+        <div class="laugh-created"><%= @laugh.created_at %></div>
     </div>    
 </div>
 <script>

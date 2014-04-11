@@ -11,5 +11,8 @@
             </a>
         </div>
         <div class="laugh-created"><%= laugh.created_at %></div>
+        <% unless laugh.source.nil? %>
+            <div class="laugh-source">(from <a href="<%= laugh.source %>" target="_blank"><%= url_domain laugh.source %></a>)</div>
+        <% end %>
     </div>
 </div>
