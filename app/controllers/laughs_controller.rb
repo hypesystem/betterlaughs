@@ -19,7 +19,7 @@ class LaughsController < ApplicationController
     filetype = get_content_type_from_headers(attr[:file].headers)
     @laugh = Laugh.new(title: attr[:title], file: attr[:file].read, filetype: filetype)
 
-    unless attr[:source].nil?
+    unless attr[:source].nil? || attr[:source].empty?
         if valid_url? attr[:source]
             @laugh.source = attr[:source]
         else
