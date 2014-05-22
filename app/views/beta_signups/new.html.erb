@@ -1,1 +1,15 @@
-Hello, World
+<h1>Sign up for beta</h1>
+
+<p>You will be notified as soon as user creation becomes available on the site -- and you can reserve a username already now!</p>
+
+<%= form_for :beta_signup, url: url_for(:controller => "beta_signups", :action => "create") do |f| %>
+    <div class="form-group">
+        <%= f.label :username %>
+        <%= f.text_field :username, placeholder: "Future username", class: "form-control" %>
+    </div>
+    <div class="form-group">
+        <%= f.label :email %>
+        <%= f.text_field :email, placeholder: "email@domain.com", class: "form-control" %>
+    </div>
+    <%= f.submit class: "btn btn-primary" %>
+<% end %>
