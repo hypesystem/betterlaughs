@@ -7,11 +7,10 @@ class LaughsController < ApplicationController
   def index
     num_items = 10
     offset = params[:offset].to_i ||= 0
-    all_laughs = Laugh.all.sort{|x,y| y.created_at <=> x.created_at}
 
-    @laughs = all_laughs[offset,num_items]
+    @laughs = Laugh.get_laughs(offset, num_items)
     @next_offset = offset + num_items
-    @more_items = all_laughs.size > @next_offset
+    @more_items = Laugh.count > @next_offset
   end
 
   def create
